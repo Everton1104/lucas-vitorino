@@ -1,27 +1,49 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+        <title>Lucas Vitorino @yield('title')</title>
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+        <!-- Styles -->
+        <style>
+            html, body {
+                overflow-x: hidden;
+                max-width: 100%;
+            }
+        </style>
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+        @yield('style')
 
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-</head>
-<body>
-    <div id="app">
+        <!-- Scripts -->
+        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+        <!-- BOOTSTRAP VALIDATE -->
+        <script>
+            (() => {
+                'use strict'
+                const forms = document.querySelectorAll('.needs-validation')
+                Array.from(forms).forEach(form => {
+                    form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                    }, false)
+                })
+            })()
+        </script>
+
+        @yield('scriptTop')
+
+    </head>
+    <body>
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    Lucas Vitorino logo
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -56,8 +78,8 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -72,9 +94,19 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="my-4">
             @yield('content')
         </main>
-    </div>
-</body>
+
+        <footer style="background-color: rgba(0, 0, 0, .5);position: absolute;width: 100vw; bottom: 0px;">
+            <div class="container">
+                footer
+            </div>
+            <div class="text-center">
+                {{date('Y')}} by EVTU.
+            </div>
+        </footer>
+
+        @yield('scriptEnd')
+    </body>
 </html>
