@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="storage/logo.png">
 
         <title>Lucas Vitorino @yield('title')</title>
 
@@ -40,20 +41,29 @@
 
     </head>
     <body>
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Lucas Vitorino logo
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <div class="container-fluid my-3">
+            <img src="storage/logo-full-no-bg.png" alt="logo-full" style="height:20vh;margin:auto;" class="d-none d-md-block">
+            <div class="d-md-none text-center">
+                <img src="storage/selo.png" alt="selo" style="height:20vh;">
+            </div>
+            
+            <span data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas" role="button" style="position:fixed;top:10px;left:10px;"><img src="storage/menu-bars.svg" alt="menu-bars"></span>
+            
+            <div class="offcanvas offcanvas-start"s id="offcanvasNavbar">
+                <div class="offcanvas-header">
+                    <span class="fs-3">Lucas Vitorino Barbearia</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    teste
+                </div>
+            </div>
+        </div>
+        
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
 
-                    </ul>
+                {{-- <div class="collapse" id="navbarSupportedContent">
+                    
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
@@ -92,13 +102,13 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> --}}
 
         <main class="my-4">
             @yield('content')
         </main>
 
-        <footer style="background-color: rgba(0, 0, 0, .5);position: absolute;width: 100vw; bottom: 0px;">
+        <footer style="background-color: rgba(0, 0, 0, .5);">
             <div class="container">
                 footer
             </div>
