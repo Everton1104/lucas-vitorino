@@ -19,6 +19,7 @@
 
         <!-- Scripts -->
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
         <!-- BOOTSTRAP VALIDATE -->
         <script>
@@ -42,9 +43,9 @@
     </head>
     <body>
         <div class="container-fluid my-3">
-            <img src="storage/logo-full-no-bg.png" alt="logo-full" style="height:20vh;margin:auto;" class="d-none d-md-block">
+            <img src="storage/logo-full-no-bg.png" onclick="window.location.href='/'" alt="logo-full" style="height:20vh;margin:auto;cursor: pointer;" class="d-none d-md-block">
             <div class="d-md-none text-center">
-                <img src="storage/selo.png" alt="selo" style="height:20vh;">
+                <img src="storage/selo.png" onclick="window.location.href='/'" alt="selo" style="height:20vh;cursor: pointer;">
             </div>
             
             <span data-bs-target="#offcanvasNavbar" data-bs-toggle="offcanvas" role="button" style="position:fixed;top:10px;left:10px;"><img src="storage/menu-bars.svg" alt="menu-bars"></span>
