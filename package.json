@@ -3,7 +3,7 @@
     "type": "module",
     "scripts": {
         "php": "php -S 0.0.0.0:8000 -t public",
-        "dev": "vite",
+        "dev": "vite --host 192.168.1.8",
         "build": "vite build"
     },
     "devDependencies": {

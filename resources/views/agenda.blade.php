@@ -4,6 +4,19 @@
    - Agenda
 @endsection
 
+@section('scriptEnd')
+    <style>
+        .hora{
+            cursor: pointer;
+        }
+        .hora:hover{
+            border: 1px solid;
+            border-radius: 20%;
+            padding: 5px;
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="container">
         <div class="text-center my-5">
@@ -13,18 +26,66 @@
         </div>
         <div class="container text-center">
             <div class="my-5 row justify-content-center">
-                <span class="btn btn-lg btn-secondary" role="button" data-bs-toggle="collapse" data-bs-target="#collapseExample">
+                <span class="btn btn-lg btn-secondary my-3" role="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1">
                     SEGUNDA-FEIRA
                 </span>
-                <div class="collapse border rounded p-3 my-3 col-3" id="collapseExample">
+                <div class="collapse border rounded p-3 my-3 col-3" id="collapseExample1">
                     @foreach ($dados as $dado)
-                        {{date('H:i', strtotime($dado->data))}}<br>
+                        <span class="hora">{{date('H:i', strtotime($dado->data))}}</span><br>
+                    @endforeach
+                </div>
+                <span class="btn btn-lg btn-secondary my-3" role="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2">
+                    TERÇA-FEIRA
+                </span>
+                <div class="collapse border rounded p-3 my-3 col-3" id="collapseExample2">
+                    @foreach ($dados as $dado)
+                        <span class="hora">{{date('H:i', strtotime($dado->data))}}</span><br>
+                    @endforeach
+                </div>
+                <span class="btn btn-lg btn-secondary my-3" role="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3">
+                    QUARTA-FEIRA
+                </span>
+                <div class="collapse border rounded p-3 my-3 col-3" id="collapseExample3">
+                    @foreach ($dados as $dado)
+                        <span class="hora">{{date('H:i', strtotime($dado->data))}}</span><br>
+                    @endforeach
+                </div>
+                <span class="btn btn-lg btn-secondary my-3" role="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4">
+                    QUINTA-FEIRA
+                </span>
+                <div class="collapse border rounded p-3 my-3 col-3" id="collapseExample4">
+                    @foreach ($dados as $dado)
+                        <span class="hora">{{date('H:i', strtotime($dado->data))}}</span><br>
+                    @endforeach
+                </div>
+                <span class="btn btn-lg btn-secondary my-3" role="button" data-bs-toggle="collapse" data-bs-target="#collapseExample5">
+                    SEXTA-FEIRA
+                </span>
+                <div class="collapse border rounded p-3 my-3 col-3" id="collapseExample5">
+                    @foreach ($dados as $dado)
+                        <span class="hora">{{date('H:i', strtotime($dado->data))}}</span><br>
+                    @endforeach
+                </div>
+                <span class="btn btn-lg btn-secondary my-3" role="button" data-bs-toggle="collapse" data-bs-target="#collapseExample6">
+                    SÁBADO
+                </span>
+                <div class="collapse border rounded p-3 my-3 col-3" id="collapseExample6">
+                    @foreach ($dados as $dado)
+                        <span class="hora">{{date('H:i', strtotime($dado->data))}}</span><br>
+                    @endforeach
+                </div>
+                <span class="btn btn-lg btn-secondary my-3" role="button" data-bs-toggle="collapse" data-bs-target="#collapseExample7">
+                    DOMINGO
+                </span>
+                <div class="collapse border rounded p-3 my-3 col-3" id="collapseExample7">
+                    @foreach ($dados as $dado)
+                        <span class="hora">{{date('H:i', strtotime($dado->data))}}</span><br>
                     @endforeach
                 </div>
             </div>
         </div>
     </div>
-    <div id="calendario"></div>
+    <div id="calendario" class="d-none"></div>
 @endsection
 
 @section('scriptEnd')

@@ -7,19 +7,19 @@
 @section('content')
     <div class="container">
         <div class="text-center my-5">
-            <span class="btn btn-outline-secondary fs-3" onclick="window.location.href='/agenda'">AGENDE SEU CORTE</span>
+            <span class="btn btn-outline-secondary fs-3" onclick="window.location.href='/entrar'">AGENDE SEU CORTE</span>
         </div>
     </div>
     <div id="carouselExampleAutoplaying" class="carousel slide vw-100" data-bs-ride="carousel">
         <div class="carousel-inner" style="height: 65vh">
             <div class="carousel-item active">
-                <img src="storage/corte_1.jpeg" class="d-block w-100" alt="corte_1">
+                <img src="{{url('/')}}/storage/corte_1.jpeg" class="d-block w-100" alt="corte_1">
             </div>
             <div class="carousel-item">
-                <img src="storage/corte_2.jpg" class="d-block w-100" alt="corte_2">
+                <img src="{{url('/')}}/storage/corte_2.jpg" class="d-block w-100" alt="corte_2">
             </div>
             <div class="carousel-item">
-                <img src="storage/corte_3.jpeg" class="d-block w-100" alt="corte_3">
+                <img src="{{url('/')}}/storage/corte_3.jpeg" class="d-block w-100" alt="corte_3">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -32,7 +32,7 @@
     <div class="container my-5">
         <div class="row">
             <div class="col-4"></div>
-            <img src="storage/tesoura-1.png" class="d-block img-fluid col-4" alt="tesoura_1">
+            <img src="{{url('/')}}/storage/tesoura-1.png" class="d-block img-fluid col-4" alt="tesoura_1">
             <div class="col-4"></div>
         <div class="fs-3 my-3">
             <p class="text-center fs-3">
@@ -42,7 +42,7 @@
         </div>
         <div class="row">
             <div class="col-4"></div>
-            <img src="storage/tesoura-2.png" class="d-block img-fluid col-4" alt="tesoura_2">
+            <img src="{{url('/')}}/storage/tesoura-2.png" class="d-block img-fluid col-4" alt="tesoura_2">
             <div class="col-4"></div>
         </div>
     </div>

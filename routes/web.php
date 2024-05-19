@@ -8,3 +8,5 @@ Auth ::routes();
 Route::resource('/', 'App\Http\Controllers\HomeController');
 
 Route::resource('agenda', 'App\Http\Controllers\AgendaController')->middleware('auth');
+
+Route::resource('entrar', 'App\Http\Controllers\EntrarController');
