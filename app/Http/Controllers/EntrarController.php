@@ -19,11 +19,11 @@ class EntrarController extends Controller
             $request['whats'] = str_replace(")","",$request->whats);
             $request['whats'] = str_replace("-","",$request->whats);
             Validator::make($request->all(), [
-                'whats' => 'required|max:14|min:14',
+                'whats' => 'required|max:11|min:11',
             ],[
                 'required' => 'É necessário inserir seu número de Whatsapp',
-                'max' => 'O número do whatsapp deve conter 11 digitos Ex.: (11) 9 1234-5678',
-                'min' => 'O número do whatsapp deve conter 11 digitos Ex.: (11) 9 1234-5678',
+                'max' => 'O número do whatsapp deve conter até 11 digitos Ex.: (11) 9 1234-5678',
+                'min' => 'O número do whatsapp deve conter ao menos 11 digitos Ex.: (11) 9 1234-5678',
             ])->validate();
             $usuario = Whats::where('whats', $request['whats'])->first();
             if(isset($usuario->id)){
